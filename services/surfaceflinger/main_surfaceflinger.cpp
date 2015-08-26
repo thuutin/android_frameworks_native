@@ -24,6 +24,7 @@
 #include <binder/ProcessState.h>
 #include <binder/IServiceManager.h>
 #include "SurfaceFlinger.h"
+#include <display/MultiDisplayService.h>
 
 using namespace android;
 
@@ -51,6 +52,7 @@ int main(int, char**) {
     sp<IServiceManager> sm(defaultServiceManager());
     sm->addService(String16(SurfaceFlinger::getServiceName()), flinger, false);
 
+    intel::MultiDisplayService::instantiate();
     // run in this thread
     flinger->run();
 

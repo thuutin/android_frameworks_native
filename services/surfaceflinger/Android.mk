@@ -139,6 +139,7 @@ LOCAL_SRC_FILES:= \
 	main_surfaceflinger.cpp
 
 LOCAL_SHARED_LIBRARIES := \
+    libmultidisplay \
 	libsurfaceflinger \
 	libcutils \
 	liblog \
